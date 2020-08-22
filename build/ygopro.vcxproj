@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A56428E7-B261-464E-853B-BCDF62198B89}</ProjectGuid>
+    <RootNamespace>ygopro</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\bin\debug\</OutDir>
+    <IntDir>..\obj\Debug\ygopro\</IntDir>
+    <TargetName>ygopro</TargetName>
+    <TargetExt>.exe</TargetExt>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\bin\release\</OutDir>
+    <IntDir>..\obj\Release\ygopro\</IntDir>
+    <TargetName>ygopro</TargetName>
+    <TargetExt>.exe</TargetExt>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>-wd4996 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\ocgcore;..\irrlicht\include;..\freetype\include;..\event\include;..\sqlite3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WIN32;_CRT_SECURE_NO_WARNINGS;_DEBUG;_ITERATOR_DEBUG_LEVEL=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader></PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <ProgramDataBaseFileName>$(OutDir)ygopro.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WIN32;_CRT_SECURE_NO_WARNINGS;_DEBUG;_ITERATOR_DEBUG_LEVEL=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\ocgcore;..\irrlicht\include;..\freetype\include;..\event\include;..\sqlite3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;ws2_32.lib;winmm.lib;gdi32.lib;kernel32.lib;user32.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)ygopro.exe</OutputFile>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>-wd4996 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>..\ocgcore;..\irrlicht\include;..\freetype\include;..\event\include;..\sqlite3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WIN32;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader></PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WIN32;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\ocgcore;..\irrlicht\include;..\freetype\include;..\event\include;..\sqlite3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;ws2_32.lib;winmm.lib;gdi32.lib;kernel32.lib;user32.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)ygopro.exe</OutputFile>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\gframe\bufferio.h" />
+    <ClInclude Include="..\gframe\CGUIButton.h" />
+    <ClInclude Include="..\gframe\CGUIImageButton.h" />
+    <ClInclude Include="..\gframe\CGUITTFont.h" />
+    <ClInclude Include="..\gframe\client_card.h" />
+    <ClInclude Include="..\gframe\client_field.h" />
+    <ClInclude Include="..\gframe\config.h" />
+    <ClInclude Include="..\gframe\data_manager.h" />
+    <ClInclude Include="..\gframe\deck_con.h" />
+    <ClInclude Include="..\gframe\deck_manager.h" />
+    <ClInclude Include="..\gframe\duelclient.h" />
+    <ClInclude Include="..\gframe\event_handler.h" />
+    <ClInclude Include="..\gframe\game.h" />
+    <ClInclude Include="..\gframe\image_manager.h" />
+    <ClInclude Include="..\gframe\irrUString.h" />
+    <ClInclude Include="..\gframe\materials.h" />
+    <ClInclude Include="..\gframe\menu_handler.h" />
+    <ClInclude Include="..\gframe\mymutex.h" />
+    <ClInclude Include="..\gframe\mysignal.h" />
+    <ClInclude Include="..\gframe\mythread.h" />
+    <ClInclude Include="..\gframe\netserver.h" />
+    <ClInclude Include="..\gframe\network.h" />
+    <ClInclude Include="..\gframe\replay.h" />
+    <ClInclude Include="..\gframe\replay_mode.h" />
+    <ClInclude Include="..\gframe\single_duel.h" />
+    <ClInclude Include="..\gframe\single_mode.h" />
+    <ClInclude Include="..\gframe\tag_duel.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\gframe\CGUIImageButton.cpp">
+    </ClCompile>
+    <ClCompile Include="..\gframe\CGUITTFont.cpp">
+    </ClCompile>
+    <ClCompile Include="..\gframe\client_card.cpp">
+    </ClCompile>
+    <ClCompile Include="..\gframe\client_field.cpp">
+    </ClCompile>
+    <ClCompile Include="..\gframe\data_manager.cpp">
+    </ClCompile>
+    <ClCompile Include="..\gframe\deck_con.cpp">
+    </ClCompile>
+    <ClCompile Include="..\gframe\deck_manager.cpp">
+    </ClCompile>
+    <ClCompile Include="..\gframe\drawing.cpp">
+    </ClCompile>
+    <ClCompile Include="..\gframe\duelclient.cpp">
+    </ClCompile>
+    <ClCompile Include="..\gframe\event_handler.cpp">
+    </ClCompile>
+    <ClCompile Include="..\gframe\game.cpp">
+    </ClCompile>
+    <ClCompile Include="..\gframe\gframe.cpp">
+    </ClCompile>
+    <ClCompile Include="..\gframe\image_manager.cpp">
+    </ClCompile>
+    <ClCompile Include="..\gframe\materials.cpp">
+    </ClCompile>
+    <ClCompile Include="..\gframe\menu_handler.cpp">
+    </ClCompile>
+    <ClCompile Include="..\gframe\netserver.cpp">
+    </ClCompile>
+    <ClCompile Include="..\gframe\replay.cpp">
+    </ClCompile>
+    <ClCompile Include="..\gframe\replay_mode.cpp">
+    </ClCompile>
+    <ClCompile Include="..\gframe\single_duel.cpp">
+    </ClCompile>
+    <ClCompile Include="..\gframe\single_mode.cpp">
+    </ClCompile>
+    <ClCompile Include="..\gframe\tag_duel.cpp">
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\gframe\ygopro.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="ocgcore.vcxproj">
+      <Project>{38A49A9F-83B1-4D4F-A4B6-632BB600A860}</Project>
+    </ProjectReference>
+    <ProjectReference Include="clzma.vcxproj">
+      <Project>{15017B19-3F5F-C244-9722-E6F669B6B717}</Project>
+    </ProjectReference>
+    <ProjectReference Include="Irrlicht.vcxproj">
+      <Project>{46754D3B-F575-264B-853E-154DF7437B91}</Project>
+    </ProjectReference>
+    <ProjectReference Include="freetype.vcxproj">
+      <Project>{BA23562F-D7B1-5149-B65B-1C45FAB22BFD}</Project>
+    </ProjectReference>
+    <ProjectReference Include="sqlite3.vcxproj">
+      <Project>{7B31200E-3078-6743-98D4-CCB0E65B12A5}</Project>
+    </ProjectReference>
+    <ProjectReference Include="lua.vcxproj">
+      <Project>{DE3C3D9F-4D13-0645-9ADF-354A90D4271B}</Project>
+    </ProjectReference>
+    <ProjectReference Include="event.vcxproj">
+      <Project>{B9F824C8-7207-1D45-9DDD-5D6AF6A56DF7}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
